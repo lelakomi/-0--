@@ -1,1 +1,277 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<title>CSS სრული პროფესიონალური კურსი</title>
+<style>
+body { font-family: Arial, sans-serif; margin:0; padding:20px; background:#f5f5f5; color:#333; }
+h1 { text-align:center; color:#2c3e50; }
+.grid-container { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:15px; margin-top:30px; }
+.card { background:#fff; padding:15px; border-radius:8px; cursor:pointer; transition:transform 0.2s; }
+.card:hover { transform: translateY(-5px); }
+.card h2 { margin:0; color:#e67e22; font-size:18px; }
+.definition { display:none; margin-top:10px; background:#ecf0f1; padding:10px; border-left:4px solid #2980b9; border-radius:4px; }
+pre { background:#ddd; padding:8px; border-radius:4px; overflow-x:auto; font-size:14px; }
+</style>
+</head>
+<body>
+
+<h1>CSS სრული პროფესიონალური კურსი</h1>
+
+<div class="grid-container">
+
+  <!-- CSS Base -->
+  <div class="card">
+    <h2>CSS რა არის?</h2>
+    <div class="definition">
+      CSS (Cascading Style Sheets) გამოიყენება HTML ელემენტების ვიზუალისთვის: ფერი, ზომა, ფონები, საზღვრები, განლაგება, ანიმაცია და სხვა.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Selectors (ელემენტების არჩევა)</h2>
+    <div class="definition">
+      Selectors ირჩევენ HTML ელემენტებს სტილის მისანიჭებლად.
+      <pre>
+/* ელემენტი */
+p { color: red; }
+
+/* კლასი */
+.button { background: blue; }
+
+/* აიდი */
+#header { font-size: 20px; }
+
+/* კომბინაცია */
+div#main.content { padding:10px; }
+
+/* შვილობილი */
+ul li { margin:5px; }
+
+/* ყველა ელემენტი */
+* { box-sizing:border-box; }
+      </pre>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Box Model</h2>
+    <div class="definition">
+      თითოეული ელემენტი შედგება:
+      <ul>
+        <li>Content – შიგთავსი</li>
+        <li>Padding – შიგა სივრცე</li>
+        <li>Border – საზღვარი</li>
+        <li>Margin – გარე სივრცე</li>
+      </ul>
+      <pre>
+div {
+  width: 200px;
+  padding: 10px;
+  border: 2px solid black;
+  margin: 5px;
+  box-sizing: border-box; /* padding და border არ აფუჭებს width */
+}
+      </pre>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Text Properties</h2>
+    <div class="definition">
+      ტექსტის კონტროლი:
+      <pre>
+color: #333;             /* ტექსტის ფერი */
+font-size: 16px;         /* ზომა */
+font-weight: bold;       /* სისქე */
+font-style: italic;      /* სტილი */
+line-height: 1.5;        /* ხაზებს შორის */
+letter-spacing: 1px;     /* ასოების დაშორება */
+text-align: center;      /* განლაგება */
+text-transform: uppercase; /* ასოების გარდაქმნა */
+text-decoration: underline; /* ხაზის დამატება */
+      </pre>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Background & Colors</h2>
+    <div class="definition">
+      ფერები და ფონები:
+      <pre>
+background-color: #f5f5f5;
+background-image: url('image.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+opacity: 0.8; /* გამჭვირვალობა */
+color: #2c3e50; /* ტექსტის ფერი */
+      </pre>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Borders & Radius</h2>
+    <div class="definition">
+      საზღვრები და კუთხეები:
+      <pre>
+border: 2px solid black;
+border-top: 3px dashed red;
+border-radius: 10px;
+box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+outline: 2px dotted blue; /* მხოლოდ ფოკუსისთვის */
+      </pre>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Flexbox</h2>
+    <div class="definition">
+      ელემენტების მოქნილი განლაგება:
+      <pre>
+.container {
+  display: flex;
+  justify-content: space-between; /* ჰორიზონტალური განლაგება */
+  align-items: center;           /* ვერტიკალური განლაგება */
+  flex-wrap: wrap;               /* გადატანა საჭიროების შემთხვევაში */
+}
+
+.item { flex: 1; } /* თითოეული ელემენტი თანაბარი ზომით */
+      </pre>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Grid</h2>
+    <div class="definition">
+      ჭადრაკული, structured layout:
+      <pre>
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.grid-item {
+  background: #eee;
+  padding: 10px;
+}
+      </pre>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Positioning & Z-index</h2>
+    <div class="definition">
+      ელემენტების პოზიციონირება:
+      <pre>
+position: static | relative | absolute | fixed | sticky;
+top: 10px; left: 20px;
+z-index: 10; /* გვერდის ელემენტების stack წესი */
+      </pre>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Overflow & Visibility</h2>
+    <div class="definition">
+      შიგთავსის ხილვადობა:
+      <pre>
+overflow: visible | hidden | scroll | auto;
+visibility: visible | hidden;
+      </pre>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Transitions & Animations</h2>
+    <div class="definition">
+      CSS მოძრაობა:
+      <pre>
+transition: all 0.3s ease;
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+.element { animation: fadeIn 2s forwards; }
+      </pre>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Pseudo-classes & Pseudo-elements</h2>
+    <div class="definition">
+      სპეციალური selectors:
+      <pre>
+a:hover { color: red; }
+input:focus { border-color: blue; }
+p::first-letter { font-size: 2em; }
+p::before { content: "► "; }
+p::after { content: "✓"; }
+li:nth-child(odd) { background: #eee; }
+      </pre>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Responsive Design & Media Queries</h2>
+    <div class="definition">
+      ეკრანის ზომის მიხედვით სტილის შეცვლა:
+      <pre>
+@media (max-width: 768px) {
+  .container { flex-direction: column; }
+  .grid { grid-template-columns: 1fr; }
+}
+      </pre>
+    </div>
+  </div>
+
+</div>
+
+<!-- Final Section -->
+<h2 class="section-title" style="text-align:center; margin-top:40px;">ფინალური: როგორ შევქმნეთ კურსი</h2>
+
+<div class="grid-container">
+  <div class="card">
+    <h2>სტრუქტურა</h2>
+    <div class="definition">
+      ყველა explanation ჩასმულია `<div class="card">`-ში. Grid layout უზრუნველყოფს ჭადრაკულ განლაგებას, მინიმალურ სქროლს.
+    </div>
+  </div>
+  <div class="card">
+    <h2>JavaScript</h2>
+    <div class="definition">
+      ყოველი `<h2>` დაკლიკებით იხსნის შესაბამის explanation:
+      <pre>
+document.querySelectorAll('.card h2').forEach(h =&gt; {
+  const def = h.nextElementSibling;
+  h.addEventListener('click', () =&gt; {
+    document.querySelectorAll('.definition').forEach(d =&gt; { if(d!==def) d.style.display='none'; });
+    def.style.display = def.style.display==='block'?'none':'block';
+  });
+});
+      </pre>
+    </div>
+  </div>
+  <div class="card">
+    <h2>მომხმარებლის გამოცდილება</h2>
+    <div class="definition">
+      - ყველა explanation ჩადებულია კარტში<br>
+      - დაკლიკებით იხსნება/ იხურება<br>
+      - Grid იძლევა მაქსიმალურ ხედვას, მინიმალურ სქროლს
+    </div>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.card h2').forEach(header => {
+  header.addEventListener('click', () => {
+    const def = header.nextElementSibling;
+    document.querySelectorAll('.definition').forEach(d => { if(d !== def) d.style.display='none'; });
+    def.style.display = def.style.display==='block'?'none':'block';
+  });
+});
+</script>
+
+</body>
+</html>
 
